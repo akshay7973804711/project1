@@ -10,8 +10,7 @@
 <form>
 
 <h1>Backtracking</h1>
-
-     <p>Copyright ©2002 by David Matuszek</p>
+<p>Copyright ©2002 by David Matuszek</p>
      <p>Backtracking is a form of recursion</p>
      <p>The usual scenario is that you are faced with a number of options, and you must choose one of these. After you make your choice you will get a new set of options; just what set of options you get depends on what choice you made. This procedure is repeated over and over until you reach a final state. If you made a good sequence of choices, your final state is a <i>goal state ;</i> if you didn't, it isn't.</p>
      <p>Conceptually,you start at the root of a tree; the tree probably has some good leaves and some bad leaves, though it may be that the leaves are all good or all bad. You want to get to a good leaf. At each node, beginning with the root, you choose one of its children to move to, and you keep this up until you get to a leaf.</p>
@@ -58,9 +57,10 @@
 <br>
 <br>
 >
-<p>Notice that the algorithm is expressed as a <i>boolean</i> function. This is essential to understanding the algorithm. If solve(n)is true, that means node nis part of a solution--that is, node n is one of the nodes on a path from the root to some goal node. We say that n is solvable.If solve(n) is false, then there is no path that includes n to any goal node </p>
+<p>Notice that the algorithm is expressed as a <i>boolean</i> function. This is essential to understanding the algorithm. If <font color="red">solve n</font> is true, that means node nis part of a solution--that is, node n is one of the nodes on a path from the root to some goal node. We say that n is solvable.If <font color="red">solve(n)</font> is false, then there is no path that includes <font color="red">solve(n)</font> n to any goal node </p>
+
 <p>How does this work? </p>
-<li>If any child of n is solvable, then n is solvable 
+<li>If any child of n is solvable, then <font color="red">n</font> is solvable 
     <li>If no child of n is solvable, then n is not solvable.</li> 
     </li>
     <p>Starting from the root, the only nodes that can be pushed onto the stack are the children of the node currently on the top of the stack, and these are only pushed on one child at a time; hence, the nodes on the stack at all times describe a valid path in the tree. Nodes are removed from the stack only when it is known that they have no goal nodes among their descendents. Therefore, if the root node gets removed (making the stack empty), there must have been no goal nodes at all, and no solution to the problem. </p>
@@ -127,7 +127,7 @@
 
 </pre>
 </font>
-<p>next we will create a TreeSearch class, and in it we will define a method makeTree which constructs the above binary tree. </p>
+<p>next we will create a <font color="red">TreeSearch</font> class, and in it we will define a method <font color="red"> makeTree</font> which constructs the above binary tree. </p>
 <font color="red">
 <pre>static BinaryTree makeTree() {
     BinaryTree root, a, b, c, d, e, f;
@@ -173,7 +173,7 @@
 
     </ol>
     <p>This program runs correctly and produces the unenlightening result true </p>
-    <p>Each time we ask for another node, we have to check if it is null. In the above we put that check as the first thing insolvable.An alternative would be to check first whether each child exists, and recur only if they do. Here's that alternative version: </p>
+    <p>Each time we ask for another <font color="red"> node</font> , we have to check if it is null. In the above we put that check as the first thing <font color="red">insolvable</font>.An alternative would be to check first whether each child exists, and recur only if they do. Here's that alternative version: </p>
     <br><br>
     <p> static boolean solvable(BinaryTree node) {
         if (node.isGoalNode) return true;
@@ -194,11 +194,11 @@
 <b>Method 1.</b>Try each of the four possible colors, and recur. When you run out of countries, check whether you are at a goal node.<p>
 <b>Method 2. </b>Try only those colors that have not already been used for an adjacent country, and recur. If and when you run out of countries, you have successfully colored the map.<br>
 <p>Let's apply each of these two methods to the problem of coloring a checkerboard. This should be easily solvable; after all, a checkerboard only needs two colors. </p>
-<p>n both methods, the colors are represented by integers, from RED=1 to BLUE=4. We define the following helper methods. The helper method code isn't displayed here because it's not important for understanding the method that does the backtracking.</p>
+<p>n both methods, the colors are represented by integers, from <font color="red">RED=1</font> to<font color="red">BLUE=4</font>. We define the following helper methods. The helper method code isn't displayed here because it's not important for understanding the method that does the backtracking.</p>
 <br><br>
-<pre>boolean mapIsOK() </pre>
+<pre> <font color="red">boolean mapIsOK()</font> </pre>
 <p>Used by method 1 to check (at a leaf node) whether the entire map is colored correctly</p>
-<pre>boolean okToColor(int row, int column, int color) </pre>
+<pre> <font color="redred">boolean okToColor(int row, int column, int color)</font> int color) </pre>
 <p>Used by method 2 to check, at every node, whether there is an adjacent node already colored with the given color.</p>
 <br><br>
 <p>
@@ -379,7 +379,7 @@
 <table>
    
         <table border="1px solid black">
-            <tr stylr="background-color: grey">
+            <tr style="background-color: grey">
 <td> <img src="black ball.png" alt=""></td>
 <td> <img src="black ball.png" alt=""></td>
 <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -412,7 +412,7 @@
 <center>   
 <table>
     <table border="1px solid black">
-        <tr stylr="background-color: grey">
+        <tr style="background-color: grey">
 <td> <img src="black ball.png" alt=""></td>
 <td> <img src="black ball.png" alt=""></td>
 <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -425,7 +425,7 @@
 <center>   
     <table>
         <table border="1px solid black">
-            <tr stylr="background-color: grey">
+            <tr style="background-color: grey">
     <td> <img src="black ball.png" alt=""></td>
     <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
     <td> <img src="black ball.png" alt=""></td>
